@@ -21,6 +21,9 @@
 		0444130A248E004F00DAE1B5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04441309248E004F00DAE1B5 /* CalendarViewController.swift */; };
 		044BD94F24922EDA006BF5A7 /* FullCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD94E24922ED9006BF5A7 /* FullCalendarViewController.swift */; };
 		2CCD884B87F7C33967DBB22F /* Pods_Diary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D6061250C64BA5DEF1C5A8 /* Pods_Diary.framework */; };
+		9B242E0F249250CB004F3011 /* ModelDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B242E0E249250CB004F3011 /* ModelDiary.swift */; };
+		9B242E1424925583004F3011 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B242E1324925583004F3011 /* BaseVC.swift */; };
+		9B242E16249255AF004F3011 /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B242E15249255AF004F3011 /* DiaryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		04441309248E004F00DAE1B5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		044BD94E24922ED9006BF5A7 /* FullCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCalendarViewController.swift; sourceTree = "<group>"; };
 		7549515EC614B0C41FB187BB /* Pods-Diary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diary/Pods-Diary.release.xcconfig"; sourceTree = "<group>"; };
+		9B242E0E249250CB004F3011 /* ModelDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDiary.swift; sourceTree = "<group>"; };
+		9B242E1324925583004F3011 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		9B242E15249255AF004F3011 /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
 		DC25CD09E6EC0498E9655D86 /* Pods-Diary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diary/Pods-Diary.debug.xcconfig"; sourceTree = "<group>"; };
 		E9D6061250C64BA5DEF1C5A8 /* Pods_Diary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -60,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				044359722490C6B600F45699 /* BaseModel.swift */,
+				9B242E0E249250CB004F3011 /* ModelDiary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -98,11 +105,13 @@
 		044413002488BBE300DAE1B5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9B242E1024925560004F3011 /* Diary */,
 				0443596F2490B69800F45699 /* SearchBarViewController.swift */,
 				044BD94E24922ED9006BF5A7 /* FullCalendarViewController.swift */,
 				044412ED2488BBD500DAE1B5 /* ViewController.swift */,
 				04441307248E002D00DAE1B5 /* PlanViewController.swift */,
 				04441309248E004F00DAE1B5 /* CalendarViewController.swift */,
+				9B242E1324925583004F3011 /* BaseVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -150,6 +159,14 @@
 				7549515EC614B0C41FB187BB /* Pods-Diary.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B242E1024925560004F3011 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				9B242E15249255AF004F3011 /* DiaryVC.swift */,
+			);
+			path = Diary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +288,11 @@
 				04441308248E002D00DAE1B5 /* PlanViewController.swift in Sources */,
 				044412EA2488BBD500DAE1B5 /* AppDelegate.swift in Sources */,
 				044359702490B69800F45699 /* SearchBarViewController.swift in Sources */,
+				9B242E1424925583004F3011 /* BaseVC.swift in Sources */,
 				044412EC2488BBD500DAE1B5 /* SceneDelegate.swift in Sources */,
+				9B242E0F249250CB004F3011 /* ModelDiary.swift in Sources */,
 				044359732490C6B600F45699 /* BaseModel.swift in Sources */,
+				9B242E16249255AF004F3011 /* DiaryVC.swift in Sources */,
 				044412F42488BBD500DAE1B5 /* Diary.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
