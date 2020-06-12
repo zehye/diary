@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Full CalendarVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FullCalendarVC" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
         </scene>
-        <!--Calendar View Controller-->
+        <!--CalendarVC-->
         <scene sceneID="h3x-L9-I21">
             <objects>
-                <viewController storyboardIdentifier="CalendarViewController" id="cxH-ub-WVR" customClass="CalendarViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarViewController" id="cxH-ub-WVR" customClass="CalendarVC" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZLY-qM-DDR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="1958" y="824"/>
         </scene>
-        <!--Plan View Controller-->
+        <!--PlanVC-->
         <scene sceneID="Vad-xI-EkJ">
             <objects>
-                <viewController restorationIdentifier="PlanViewController" storyboardIdentifier="PlanViewController" id="6Lx-hp-q1d" customClass="PlanViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PlanViewController" storyboardIdentifier="PlanViewController" id="6Lx-hp-q1d" customClass="PlanVC" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gj2-91-lWJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

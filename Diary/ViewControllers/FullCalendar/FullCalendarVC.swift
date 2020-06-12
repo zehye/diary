@@ -1,15 +1,14 @@
-
 //
-//  CalendarViewController.swift
+//  FullCalendarViewController.swift
 //  Diary
 //
-//  Created by 졔님 on 2020/06/08.
+//  Created by 졔님 on 2020/06/11.
 //  Copyright © 2020 zehye. All rights reserved.
 //
 
 import UIKit
 
-class CalendarViewController: UIViewController {
+class FullCalendarVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
