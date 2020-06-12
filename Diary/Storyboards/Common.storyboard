@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansBold.otf">
+            <string>GmarketSansBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Text InputVC-->
+        <scene sceneID="FSo-qk-ZA8">
+            <objects>
+                <viewController storyboardIdentifier="TextInputVC" id="2vE-ZN-ASu" customClass="TextInputVC" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="stb-LZ-jeS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vV-3c-9fu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yb-4m-HjZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xQF-LU-pGp">
+                                        <rect key="frame" x="20" y="765" width="374" height="33"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A02-YG-gZ8">
+                                        <rect key="frame" x="344" y="0.0" width="70" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="hat-E5-pyK"/>
+                                            <constraint firstAttribute="height" constant="44" id="iXl-bY-76U"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="16"/>
+                                        <state key="normal" title="저장">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAK-iK-D1W">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="ooM-Lo-LcF"/>
+                                            <constraint firstAttribute="height" constant="44" id="tOZ-1k-e02"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="15"/>
+                                        <state key="normal" title="취소">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xQF-LU-pGp" secondAttribute="trailing" constant="20" id="7eb-XO-ffY"/>
+                                    <constraint firstAttribute="bottom" secondItem="xQF-LU-pGp" secondAttribute="bottom" constant="20" id="F1L-Lk-h0q"/>
+                                    <constraint firstItem="BAK-iK-D1W" firstAttribute="leading" secondItem="7Yb-4m-HjZ" secondAttribute="leading" id="aYb-6e-fUQ"/>
+                                    <constraint firstItem="xQF-LU-pGp" firstAttribute="leading" secondItem="7Yb-4m-HjZ" secondAttribute="leading" constant="20" id="cnK-fb-wrO"/>
+                                    <constraint firstItem="A02-YG-gZ8" firstAttribute="top" secondItem="7Yb-4m-HjZ" secondAttribute="top" id="gxF-Dr-ZS6"/>
+                                    <constraint firstItem="xQF-LU-pGp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="A02-YG-gZ8" secondAttribute="bottom" constant="20" id="hGm-mt-dEn"/>
+                                    <constraint firstItem="BAK-iK-D1W" firstAttribute="top" secondItem="7Yb-4m-HjZ" secondAttribute="top" id="x34-9a-5H4"/>
+                                    <constraint firstAttribute="trailing" secondItem="A02-YG-gZ8" secondAttribute="trailing" id="xQy-qd-4R3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Yb-4m-HjZ" firstAttribute="trailing" secondItem="LCV-FY-J3g" secondAttribute="trailing" id="2GY-fj-GgA"/>
+                            <constraint firstAttribute="trailing" secondItem="0vV-3c-9fu" secondAttribute="trailing" id="3ZB-JI-BtR"/>
+                            <constraint firstItem="LCV-FY-J3g" firstAttribute="bottom" secondItem="7Yb-4m-HjZ" secondAttribute="bottom" id="BtL-iU-zUq"/>
+                            <constraint firstItem="0vV-3c-9fu" firstAttribute="top" secondItem="stb-LZ-jeS" secondAttribute="top" id="JSb-i2-K6z"/>
+                            <constraint firstItem="7Yb-4m-HjZ" firstAttribute="leading" secondItem="LCV-FY-J3g" secondAttribute="leading" id="MMD-hb-F4d"/>
+                            <constraint firstItem="7Yb-4m-HjZ" firstAttribute="top" secondItem="LCV-FY-J3g" secondAttribute="top" id="Weq-Wy-QYV"/>
+                            <constraint firstAttribute="bottom" secondItem="0vV-3c-9fu" secondAttribute="bottom" id="lLd-pz-uOZ"/>
+                            <constraint firstItem="0vV-3c-9fu" firstAttribute="leading" secondItem="stb-LZ-jeS" secondAttribute="leading" id="ykL-Zr-6OR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LCV-FY-J3g"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomHeight" destination="F1L-Lk-h0q" id="Da4-3B-cys"/>
+                        <outlet property="textView" destination="xQF-LU-pGp" id="tPQ-TF-KpD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVH-Fk-Ge6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-488.40579710144931" y="-498.21428571428567"/>
+        </scene>
+    </scenes>
+</document>

@@ -6,49 +6,442 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansBold.otf">
+            <string>GmarketSansBold</string>
+        </array>
+        <array key="GmarketSansMedium.otf">
+            <string>GmarketSansMedium</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--DiaryVC-->
         <scene sceneID="g3m-p7-Gxl">
             <objects>
-                <viewController id="y4P-wz-Z8e" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryVC" id="y4P-wz-Z8e" customClass="DiaryVC" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c7f-jf-c1h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Lm-YZ-Rfd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Lm-YZ-Rfd">
                                 <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="7BB-Bx-meI">
+                                    <rect key="frame" x="0.0" y="780.66666030883789" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="06K-6b-Wbh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="06K-6b-Wbh" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="06K-6b-Wbh" id="Yji-NB-D4x">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020 년 06 월 06 일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTx-Fi-NNc">
+                                                    <rect key="frame" x="20" y="13.333333333333336" width="335" height="17"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JTx-Fi-NNc" firstAttribute="leading" secondItem="Yji-NB-D4x" secondAttribute="leading" constant="20" id="2gu-OK-gfd"/>
+                                                <constraint firstAttribute="trailing" secondItem="JTx-Fi-NNc" secondAttribute="trailing" constant="20" id="pMf-Dn-9VG"/>
+                                                <constraint firstItem="JTx-Fi-NNc" firstAttribute="centerY" secondItem="Yji-NB-D4x" secondAttribute="centerY" id="vFK-qS-mhg"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AwM-Uc-PU5">
-                                        <rect key="frame" x="0.0" y="71.666667938232422" width="375" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Weather" id="AwM-Uc-PU5" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71.666667938232422" width="375" height="44.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AwM-Uc-PU5" id="dDI-Ys-KGC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgS-oY-zcb">
+                                                    <rect key="frame" x="20" y="0.0" width="335" height="44.333333333333336"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ewh-Ox-vRR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="44.333333333333336"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kE5-o7-0cQ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="44.333333333333336"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvs-zL-oDq">
+                                                                            <rect key="frame" x="19.666666666666661" y="0.0" width="44.333333333333343" height="44.333333333333336"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="cvs-zL-oDq" secondAttribute="height" multiplier="1:1" id="vt1-CO-Rha"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
+                                                                            <state key="normal" title="눈">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                                                    <integer key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="cvs-zL-oDq" firstAttribute="top" secondItem="kE5-o7-0cQ" secondAttribute="top" id="7M5-dP-3Hl"/>
+                                                                        <constraint firstItem="cvs-zL-oDq" firstAttribute="centerX" secondItem="kE5-o7-0cQ" secondAttribute="centerX" id="LjC-aF-UxG"/>
+                                                                        <constraint firstItem="cvs-zL-oDq" firstAttribute="centerY" secondItem="kE5-o7-0cQ" secondAttribute="centerY" id="Xsi-SF-Ddd"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="cvs-zL-oDq" secondAttribute="bottom" id="dYs-tn-C3N"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdY-Wu-hE2">
+                                                                    <rect key="frame" x="83.666666666666671" y="0.0" width="84.000000000000014" height="44.333333333333336"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5x-eA-MCV">
+                                                                            <rect key="frame" x="19.666666666666661" y="0.0" width="44.333333333333343" height="44.333333333333336"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="r5x-eA-MCV" secondAttribute="height" multiplier="1:1" id="SyS-Wq-wVC"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
+                                                                            <state key="normal" title="비">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                                                    <integer key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="r5x-eA-MCV" firstAttribute="centerY" secondItem="KdY-Wu-hE2" secondAttribute="centerY" id="BDj-4x-00L"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="r5x-eA-MCV" secondAttribute="bottom" id="CP2-qi-6L4"/>
+                                                                        <constraint firstItem="r5x-eA-MCV" firstAttribute="top" secondItem="KdY-Wu-hE2" secondAttribute="top" id="GhJ-U4-34T"/>
+                                                                        <constraint firstItem="r5x-eA-MCV" firstAttribute="centerX" secondItem="KdY-Wu-hE2" secondAttribute="centerX" id="RV2-OA-9qV"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRB-V5-ora">
+                                                                    <rect key="frame" x="167.66666666666666" y="0.0" width="83.666666666666657" height="44.333333333333336"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0C-Ya-dSd">
+                                                                            <rect key="frame" x="19.666666666666689" y="0.0" width="44.333333333333343" height="44.333333333333336"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="u0C-Ya-dSd" secondAttribute="height" multiplier="1:1" id="4zA-bn-W5w"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
+                                                                            <state key="normal" title="흐림">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                                                    <integer key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="u0C-Ya-dSd" firstAttribute="centerY" secondItem="VRB-V5-ora" secondAttribute="centerY" id="IBF-cS-rbn"/>
+                                                                        <constraint firstItem="u0C-Ya-dSd" firstAttribute="centerX" secondItem="VRB-V5-ora" secondAttribute="centerX" id="Muo-fE-r5b"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="u0C-Ya-dSd" secondAttribute="bottom" id="PDV-V5-txe"/>
+                                                                        <constraint firstItem="u0C-Ya-dSd" firstAttribute="top" secondItem="VRB-V5-ora" secondAttribute="top" id="sur-oR-kKH"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyf-TE-LNo">
+                                                                    <rect key="frame" x="251.33333333333329" y="0.0" width="83.666666666666657" height="44.333333333333336"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcd-ad-P3T">
+                                                                            <rect key="frame" x="19.666666666666689" y="0.0" width="44.333333333333343" height="44.333333333333336"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="gcd-ad-P3T" secondAttribute="height" multiplier="1:1" id="wfZ-zy-vNL"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
+                                                                            <state key="normal" title="맑음">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                                                    <integer key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="gcd-ad-P3T" firstAttribute="centerY" secondItem="Eyf-TE-LNo" secondAttribute="centerY" id="QM7-H2-AfL"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="gcd-ad-P3T" secondAttribute="bottom" id="cn1-ne-T8y"/>
+                                                                        <constraint firstItem="gcd-ad-P3T" firstAttribute="centerX" secondItem="Eyf-TE-LNo" secondAttribute="centerX" id="naX-N4-Nc9"/>
+                                                                        <constraint firstItem="gcd-ad-P3T" firstAttribute="top" secondItem="Eyf-TE-LNo" secondAttribute="top" id="sJS-l6-LbS"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="VRB-V5-ora" firstAttribute="width" secondItem="kE5-o7-0cQ" secondAttribute="width" id="GVS-nk-n6O"/>
+                                                                <constraint firstItem="Eyf-TE-LNo" firstAttribute="width" secondItem="kE5-o7-0cQ" secondAttribute="width" id="RwO-tA-d6L"/>
+                                                                <constraint firstItem="KdY-Wu-hE2" firstAttribute="width" secondItem="kE5-o7-0cQ" secondAttribute="width" id="lhe-mv-ZGP"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="Ewh-Ox-vRR" secondAttribute="bottom" id="5M4-w9-PtF"/>
+                                                        <constraint firstItem="Ewh-Ox-vRR" firstAttribute="top" secondItem="jgS-oY-zcb" secondAttribute="top" id="6e6-KW-U9b"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ewh-Ox-vRR" secondAttribute="trailing" id="cSJ-Mg-Kk4"/>
+                                                        <constraint firstAttribute="height" constant="44" id="hAr-06-q08"/>
+                                                        <constraint firstItem="Ewh-Ox-vRR" firstAttribute="leading" secondItem="jgS-oY-zcb" secondAttribute="leading" id="pBH-pj-7Us"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jgS-oY-zcb" firstAttribute="leading" secondItem="dDI-Ys-KGC" secondAttribute="leading" constant="20" id="DCq-VC-JfH"/>
+                                                <constraint firstAttribute="bottom" secondItem="jgS-oY-zcb" secondAttribute="bottom" id="OIb-Wo-zQt"/>
+                                                <constraint firstItem="jgS-oY-zcb" firstAttribute="top" secondItem="dDI-Ys-KGC" secondAttribute="top" id="Owj-0b-y3K"/>
+                                                <constraint firstAttribute="trailing" secondItem="jgS-oY-zcb" secondAttribute="trailing" constant="20" id="xW2-vi-qU0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0yu-m4-VUG">
-                                        <rect key="frame" x="0.0" y="115.33333587646484" width="375" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Wakeup" id="0yu-m4-VUG" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="116" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0yu-m4-VUG" id="atC-uU-Iib">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기상 시간 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIB-z4-Siw">
+                                                    <rect key="frame" x="20" y="14" width="79.333333333333329" height="16"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11시 30분" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yr-bx-Sye">
+                                                    <rect key="frame" x="292.33333333333331" y="14.666666666666664" width="62.666666666666686" height="14.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="14"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9yr-bx-Sye" firstAttribute="centerY" secondItem="atC-uU-Iib" secondAttribute="centerY" id="IAl-zj-wl0"/>
+                                                <constraint firstItem="9yr-bx-Sye" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mIB-z4-Siw" secondAttribute="trailing" id="J5I-jQ-dvX"/>
+                                                <constraint firstItem="mIB-z4-Siw" firstAttribute="leading" secondItem="atC-uU-Iib" secondAttribute="leading" constant="20" id="KNY-wR-B9D"/>
+                                                <constraint firstAttribute="trailing" secondItem="9yr-bx-Sye" secondAttribute="trailing" constant="20" id="T3I-Py-NsJ"/>
+                                                <constraint firstItem="mIB-z4-Siw" firstAttribute="centerY" secondItem="atC-uU-Iib" secondAttribute="centerY" id="tso-07-0X5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="g8r-0k-DDj">
-                                        <rect key="frame" x="0.0" y="159.00000381469727" width="375" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Bedtime" id="g8r-0k-DDj" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="159.66666793823242" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g8r-0k-DDj" id="jx0-cp-MOh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="취침 시간 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c2-HX-vmP">
+                                                    <rect key="frame" x="20" y="14" width="79.333333333333329" height="16"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23시 30분" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNP-5H-YJR">
+                                                    <rect key="frame" x="286.66666666666669" y="14.666666666666664" width="68.333333333333314" height="14.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="14"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6c2-HX-vmP" firstAttribute="centerY" secondItem="jx0-cp-MOh" secondAttribute="centerY" id="YRR-dn-YNJ"/>
+                                                <constraint firstItem="SNP-5H-YJR" firstAttribute="centerY" secondItem="jx0-cp-MOh" secondAttribute="centerY" id="cpD-nQ-ebv"/>
+                                                <constraint firstAttribute="trailing" secondItem="SNP-5H-YJR" secondAttribute="trailing" constant="20" id="cr7-Ff-JIB"/>
+                                                <constraint firstItem="SNP-5H-YJR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6c2-HX-vmP" secondAttribute="trailing" id="ea3-Dg-0uM"/>
+                                                <constraint firstItem="6c2-HX-vmP" firstAttribute="leading" secondItem="jx0-cp-MOh" secondAttribute="leading" constant="20" id="yYK-B0-MB6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Picture" id="CLf-16-2DP" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="203.33333587646484" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CLf-16-2DP" id="23q-Qd-WhT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MVE-8P-nFP">
+                                                    <rect key="frame" x="20" y="0.0" width="335" height="43.666666666666664"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="MVE-8P-nFP" secondAttribute="bottom" id="5ob-1e-i8N"/>
+                                                <constraint firstItem="MVE-8P-nFP" firstAttribute="leading" secondItem="23q-Qd-WhT" secondAttribute="leading" constant="20" id="GUf-DV-M4Q"/>
+                                                <constraint firstItem="MVE-8P-nFP" firstAttribute="top" secondItem="23q-Qd-WhT" secondAttribute="top" id="hK6-uC-57W"/>
+                                                <constraint firstAttribute="trailing" secondItem="MVE-8P-nFP" secondAttribute="trailing" constant="20" id="wWT-5f-qGx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Content" id="WaB-Un-gVj" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="247.00000381469727" width="375" height="224.33332824707031"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WaB-Un-gVj" id="Uy3-50-gu3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="224.33332824707031"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x2T-fI-Ytj">
+                                                    <rect key="frame" x="20" y="12" width="335" height="200.33333333333334"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Ee5-KN-gWi"/>
+                                                    </constraints>
+                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="x2T-fI-Ytj" firstAttribute="leading" secondItem="Uy3-50-gu3" secondAttribute="leading" constant="20" id="IqY-C5-qAH"/>
+                                                <constraint firstAttribute="bottom" secondItem="x2T-fI-Ytj" secondAttribute="bottom" constant="12" id="Pno-bb-uq5"/>
+                                                <constraint firstItem="x2T-fI-Ytj" firstAttribute="top" secondItem="Uy3-50-gu3" secondAttribute="top" constant="12" id="h6y-Gd-S9a"/>
+                                                <constraint firstAttribute="trailing" secondItem="x2T-fI-Ytj" secondAttribute="trailing" constant="20" id="iN3-yF-hDc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Good" id="hrS-zG-BsD" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="471.33333206176758" width="375" height="70.666664123535156"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hrS-zG-BsD" id="SEj-ZG-N4n">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70.666664123535156"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="착한 일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5k-TS-9Zh">
+                                                    <rect key="frame" x="20" y="12" width="335" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="T5v-uC-eip"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 한 착한 일을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppT-ff-dS6">
+                                                    <rect key="frame" x="20" y="44" width="335" height="14.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="14"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ppT-ff-dS6" firstAttribute="top" secondItem="e5k-TS-9Zh" secondAttribute="bottom" constant="12" id="DDR-Ig-cO2"/>
+                                                <constraint firstItem="ppT-ff-dS6" firstAttribute="leading" secondItem="SEj-ZG-N4n" secondAttribute="leading" constant="20" id="Dc9-xf-bH1"/>
+                                                <constraint firstAttribute="trailing" secondItem="e5k-TS-9Zh" secondAttribute="trailing" constant="20" id="UjF-JE-icZ"/>
+                                                <constraint firstItem="e5k-TS-9Zh" firstAttribute="top" secondItem="SEj-ZG-N4n" secondAttribute="top" constant="12" id="VN5-hK-fnW"/>
+                                                <constraint firstItem="e5k-TS-9Zh" firstAttribute="leading" secondItem="SEj-ZG-N4n" secondAttribute="leading" constant="20" id="YKs-oF-qJn"/>
+                                                <constraint firstAttribute="bottom" secondItem="ppT-ff-dS6" secondAttribute="bottom" constant="12" id="fiM-tO-bA7"/>
+                                                <constraint firstAttribute="trailing" secondItem="ppT-ff-dS6" secondAttribute="trailing" constant="20" id="vTj-OC-0gt"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Bad" id="UKh-eX-j56" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="541.99999618530273" width="375" height="70.666664123535156"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UKh-eX-j56" id="vMD-RY-Byi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70.666664123535156"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나쁜 일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CC2-v8-Gmw">
+                                                    <rect key="frame" x="20" y="12" width="335" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="jif-gr-KD1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 한 나쁜 일을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deB-xh-1Fs">
+                                                    <rect key="frame" x="20" y="44" width="335" height="14.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="14"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="deB-xh-1Fs" secondAttribute="bottom" constant="12" id="5Ov-hN-CUh"/>
+                                                <constraint firstItem="deB-xh-1Fs" firstAttribute="leading" secondItem="vMD-RY-Byi" secondAttribute="leading" constant="20" id="V3Z-KC-ndb"/>
+                                                <constraint firstItem="deB-xh-1Fs" firstAttribute="top" secondItem="CC2-v8-Gmw" secondAttribute="bottom" constant="12" id="bTV-05-TOw"/>
+                                                <constraint firstAttribute="trailing" secondItem="deB-xh-1Fs" secondAttribute="trailing" constant="20" id="fdD-PU-FoY"/>
+                                                <constraint firstItem="CC2-v8-Gmw" firstAttribute="leading" secondItem="vMD-RY-Byi" secondAttribute="leading" constant="20" id="ioD-vF-piP"/>
+                                                <constraint firstAttribute="trailing" secondItem="CC2-v8-Gmw" secondAttribute="trailing" constant="20" id="izF-0E-Mge"/>
+                                                <constraint firstItem="CC2-v8-Gmw" firstAttribute="top" secondItem="vMD-RY-Byi" secondAttribute="top" constant="12" id="oTE-4G-2Ek"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Happy" id="kCl-mf-wX7" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="612.66666030883789" width="375" height="70.666664123535156"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kCl-mf-wX7" id="3xJ-SI-akk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70.666664123535156"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복했던 일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDs-aQ-SFh">
+                                                    <rect key="frame" x="20" y="12" width="335" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Wno-em-8eo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 한 착한 일을 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeR-N6-9Z2">
+                                                    <rect key="frame" x="20" y="44" width="335" height="14.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="14"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="JeR-N6-9Z2" secondAttribute="trailing" constant="20" id="43M-uf-Nsq"/>
+                                                <constraint firstItem="gDs-aQ-SFh" firstAttribute="top" secondItem="3xJ-SI-akk" secondAttribute="top" constant="12" id="L5C-zg-1HT"/>
+                                                <constraint firstAttribute="trailing" secondItem="gDs-aQ-SFh" secondAttribute="trailing" constant="20" id="R1j-im-gZq"/>
+                                                <constraint firstItem="gDs-aQ-SFh" firstAttribute="leading" secondItem="3xJ-SI-akk" secondAttribute="leading" constant="20" id="TZH-oz-ecA"/>
+                                                <constraint firstItem="JeR-N6-9Z2" firstAttribute="top" secondItem="gDs-aQ-SFh" secondAttribute="bottom" constant="12" id="jsQ-wu-kRK"/>
+                                                <constraint firstItem="JeR-N6-9Z2" firstAttribute="leading" secondItem="3xJ-SI-akk" secondAttribute="leading" constant="20" id="o4G-sj-ETg"/>
+                                                <constraint firstAttribute="bottom" secondItem="JeR-N6-9Z2" secondAttribute="bottom" constant="12" id="wnY-fw-6cU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Kill" id="JJv-G1-WXZ" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="683.33332443237305" width="375" height="69.333335876464844"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JJv-G1-WXZ" id="woL-Ae-boT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.333335876464844"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Death Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObH-eH-ODw">
+                                                    <rect key="frame" x="20" y="12" width="335" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="pej-lf-AGs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반드시 네 녀석을 찾아내서 제거해주마. 내가 정의다!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIY-6y-EUI">
+                                                    <rect key="frame" x="20" y="44" width="335" height="13.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="13"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vIY-6y-EUI" firstAttribute="top" secondItem="ObH-eH-ODw" secondAttribute="bottom" constant="12" id="4b9-hj-Rll"/>
+                                                <constraint firstAttribute="trailing" secondItem="vIY-6y-EUI" secondAttribute="trailing" constant="20" id="ELe-ZH-ugL"/>
+                                                <constraint firstItem="vIY-6y-EUI" firstAttribute="leading" secondItem="woL-Ae-boT" secondAttribute="leading" constant="20" id="Ghk-ne-KDf"/>
+                                                <constraint firstAttribute="bottom" secondItem="vIY-6y-EUI" secondAttribute="bottom" constant="12" id="d14-P9-Z6R"/>
+                                                <constraint firstItem="ObH-eH-ODw" firstAttribute="leading" secondItem="woL-Ae-boT" secondAttribute="leading" constant="20" id="evU-DU-TbO"/>
+                                                <constraint firstItem="ObH-eH-ODw" firstAttribute="top" secondItem="woL-Ae-boT" secondAttribute="top" constant="12" id="puC-Zq-mbc"/>
+                                                <constraint firstAttribute="trailing" secondItem="ObH-eH-ODw" secondAttribute="trailing" constant="20" id="xcG-ks-YaF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -64,6 +457,9 @@
                         <viewLayoutGuide key="safeArea" id="wUf-mi-dgA"/>
                     </view>
                     <navigationItem key="navigationItem" id="1OM-Ac-33G"/>
+                    <connections>
+                        <outlet property="tableView" destination="7Lm-YZ-Rfd" id="L2d-uU-Bnd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9I-ul-axa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,8 +16,6 @@ class BaseVC: UIViewController {
         
     }
     
-    
-    
     func setUI() {
         
     }
@@ -25,6 +23,12 @@ class BaseVC: UIViewController {
     @IBAction func backBtnClicked(_ sender:Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    
+}
 
+extension BaseVC {
+    
     
 }
