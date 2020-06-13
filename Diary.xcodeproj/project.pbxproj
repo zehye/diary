@@ -17,9 +17,9 @@
 		044412F62488BBD600DAE1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044412F52488BBD600DAE1B5 /* Assets.xcassets */; };
 		044412F92488BBD600DAE1B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044412F72488BBD600DAE1B5 /* LaunchScreen.storyboard */; };
 		04441306248CB17A00DAE1B5 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04441305248CB17A00DAE1B5 /* Diary.storyboard */; };
-		04441308248E002D00DAE1B5 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04441307248E002D00DAE1B5 /* PlanViewController.swift */; };
-		0444130A248E004F00DAE1B5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04441309248E004F00DAE1B5 /* CalendarViewController.swift */; };
-		044BD94F24922EDA006BF5A7 /* FullCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD94E24922ED9006BF5A7 /* FullCalendarViewController.swift */; };
+		04441308248E002D00DAE1B5 /* PlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04441307248E002D00DAE1B5 /* PlanVC.swift */; };
+		044BD94F24922EDA006BF5A7 /* FullCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD94E24922ED9006BF5A7 /* FullCalendarVC.swift */; };
+		044BD95424933989006BF5A7 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD95324933989006BF5A7 /* CalendarVC.swift */; };
 		2CCD884B87F7C33967DBB22F /* Pods_Diary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D6061250C64BA5DEF1C5A8 /* Pods_Diary.framework */; };
 		9B242E0F249250CB004F3011 /* ModelDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B242E0E249250CB004F3011 /* ModelDiary.swift */; };
 		9B242E1424925583004F3011 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B242E1324925583004F3011 /* BaseVC.swift */; };
@@ -47,9 +47,9 @@
 		044412F82488BBD600DAE1B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		044412FA2488BBD600DAE1B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04441305248CB17A00DAE1B5 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
-		04441307248E002D00DAE1B5 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
-		04441309248E004F00DAE1B5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		044BD94E24922ED9006BF5A7 /* FullCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCalendarViewController.swift; sourceTree = "<group>"; };
+		04441307248E002D00DAE1B5 /* PlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanVC.swift; sourceTree = "<group>"; };
+		044BD94E24922ED9006BF5A7 /* FullCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCalendarVC.swift; sourceTree = "<group>"; };
+		044BD95324933989006BF5A7 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		7549515EC614B0C41FB187BB /* Pods-Diary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diary/Pods-Diary.release.xcconfig"; sourceTree = "<group>"; };
 		9B242E0E249250CB004F3011 /* ModelDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDiary.swift; sourceTree = "<group>"; };
 		9B242E1324925583004F3011 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
@@ -122,12 +122,12 @@
 			isa = PBXGroup;
 			children = (
 				9B242E252493A759004F3011 /* Common */,
+				044BD952249338F8006BF5A7 /* Plan */,
+				044BD951249338E1006BF5A7 /* Calendar */,
+				044BD950249338D4006BF5A7 /* FullCalendar */,
 				9B242E1024925560004F3011 /* Diary */,
 				0443596F2490B69800F45699 /* SearchBarViewController.swift */,
-				044BD94E24922ED9006BF5A7 /* FullCalendarViewController.swift */,
 				044412ED2488BBD500DAE1B5 /* ViewController.swift */,
-				04441307248E002D00DAE1B5 /* PlanViewController.swift */,
-				04441309248E004F00DAE1B5 /* CalendarViewController.swift */,
 				9B242E1324925583004F3011 /* BaseVC.swift */,
 			);
 			path = ViewControllers;
@@ -161,6 +161,30 @@
 			children = (
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		044BD950249338D4006BF5A7 /* FullCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				044BD94E24922ED9006BF5A7 /* FullCalendarVC.swift */,
+			);
+			path = FullCalendar;
+			sourceTree = "<group>";
+		};
+		044BD951249338E1006BF5A7 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				044BD95324933989006BF5A7 /* CalendarVC.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		044BD952249338F8006BF5A7 /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				04441307248E002D00DAE1B5 /* PlanVC.swift */,
+			);
+			path = Plan;
 			sourceTree = "<group>";
 		};
 		4FA2419B61622CE3363F7251 /* Frameworks */ = {
@@ -325,11 +349,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Diary/Pods-Diary-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CalendarLib/CalendarLib.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/OSCache/OSCache.framework",
+				"${BUILT_PRODUCTS_DIR}/OrderedDictionary/OrderedDictionary.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CalendarLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OSCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OrderedDictionary.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -346,8 +376,9 @@
 				9B242E1924938DC8004F3011 /* AlertController.swift in Sources */,
 				0444130A248E004F00DAE1B5 /* CalendarViewController.swift in Sources */,
 				044412EE2488BBD500DAE1B5 /* ViewController.swift in Sources */,
-				044BD94F24922EDA006BF5A7 /* FullCalendarViewController.swift in Sources */,
-				04441308248E002D00DAE1B5 /* PlanViewController.swift in Sources */,
+				044BD94F24922EDA006BF5A7 /* FullCalendarVC.swift in Sources */,
+				044BD95424933989006BF5A7 /* CalendarVC.swift in Sources */,
+				04441308248E002D00DAE1B5 /* PlanVC.swift in Sources */,
 				044412EA2488BBD500DAE1B5 /* AppDelegate.swift in Sources */,
 				044359702490B69800F45699 /* SearchBarViewController.swift in Sources */,
 				9B242E1424925583004F3011 /* BaseVC.swift in Sources */,

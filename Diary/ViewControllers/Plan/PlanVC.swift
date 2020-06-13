@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlanViewController: UIViewController {
+class PlanVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
