@@ -27,13 +27,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yb-4m-HjZ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xQF-LU-pGp">
-                                        <rect key="frame" x="20" y="765" width="374" height="33"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xQF-LU-pGp">
+                                        <rect key="frame" x="20" y="64" width="374" height="734"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mm5-J1-SNQ">
+                                        <rect key="frame" x="20" y="798" width="374" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="iCZ-NQ-xlr"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A02-YG-gZ8">
                                         <rect key="frame" x="344" y="0.0" width="70" height="44"/>
                                         <constraints>
@@ -44,6 +51,9 @@
                                         <state key="normal" title="저장">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveBtnClicked:" destination="2vE-ZN-ASu" eventType="touchUpInside" id="ncZ-xM-7pX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAK-iK-D1W">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
@@ -55,16 +65,22 @@
                                         <state key="normal" title="취소">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backBtnClicked:" destination="2vE-ZN-ASu" eventType="touchUpInside" id="qMj-6G-BaT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="xQF-LU-pGp" firstAttribute="top" secondItem="A02-YG-gZ8" secondAttribute="bottom" constant="20" id="1E1-1h-9Z9"/>
                                     <constraint firstAttribute="trailing" secondItem="xQF-LU-pGp" secondAttribute="trailing" constant="20" id="7eb-XO-ffY"/>
                                     <constraint firstAttribute="bottom" secondItem="xQF-LU-pGp" secondAttribute="bottom" constant="20" id="F1L-Lk-h0q"/>
+                                    <constraint firstItem="mm5-J1-SNQ" firstAttribute="top" secondItem="xQF-LU-pGp" secondAttribute="bottom" id="J6J-68-E3y"/>
+                                    <constraint firstItem="mm5-J1-SNQ" firstAttribute="leading" secondItem="7Yb-4m-HjZ" secondAttribute="leading" constant="20" id="Tp1-5R-bqP"/>
                                     <constraint firstItem="BAK-iK-D1W" firstAttribute="leading" secondItem="7Yb-4m-HjZ" secondAttribute="leading" id="aYb-6e-fUQ"/>
                                     <constraint firstItem="xQF-LU-pGp" firstAttribute="leading" secondItem="7Yb-4m-HjZ" secondAttribute="leading" constant="20" id="cnK-fb-wrO"/>
                                     <constraint firstItem="A02-YG-gZ8" firstAttribute="top" secondItem="7Yb-4m-HjZ" secondAttribute="top" id="gxF-Dr-ZS6"/>
-                                    <constraint firstItem="xQF-LU-pGp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="A02-YG-gZ8" secondAttribute="bottom" constant="20" id="hGm-mt-dEn"/>
+                                    <constraint firstAttribute="trailing" secondItem="mm5-J1-SNQ" secondAttribute="trailing" constant="20" id="tqu-AW-Eb5"/>
                                     <constraint firstItem="BAK-iK-D1W" firstAttribute="top" secondItem="7Yb-4m-HjZ" secondAttribute="top" id="x34-9a-5H4"/>
                                     <constraint firstAttribute="trailing" secondItem="A02-YG-gZ8" secondAttribute="trailing" id="xQy-qd-4R3"/>
                                 </constraints>
@@ -84,7 +100,9 @@
                         <viewLayoutGuide key="safeArea" id="LCV-FY-J3g"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="0vV-3c-9fu" id="uvy-Mt-IWO"/>
                         <outlet property="bottomHeight" destination="F1L-Lk-h0q" id="Da4-3B-cys"/>
+                        <outlet property="frontView" destination="7Yb-4m-HjZ" id="TIu-fb-jEE"/>
                         <outlet property="textView" destination="xQF-LU-pGp" id="tPQ-TF-KpD"/>
                     </connections>
                 </viewController>

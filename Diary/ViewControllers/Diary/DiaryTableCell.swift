@@ -8,17 +8,37 @@
 
 import UIKit
 
+
+protocol DiaryDelegate {
+    func loadTextInputVC()
+}
+
 class DiaryTableCell: UITableViewCell {
 
+    @IBOutlet weak var textLbl: UILabel!
+    
+    var delegate:DiaryDelegate!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setAddTarget() {
+        print("setAddTarget")
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(loadTextInput(_:)))
+        self.addGestureRecognizer(tapGesture)
+    }
+    @objc func loadTextInput(_ sender:UITapGestureRecognizer) {
+        print("loadTextInput")
+        self.delegate.loadTextInputVC()
     }
 
 }

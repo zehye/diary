@@ -69,6 +69,8 @@ extension DiaryVC: UITableViewDelegate, UITableViewDataSource {
             break
         case .Content:
             cell = tableView.dequeueReusableCell(withIdentifier: "Content") as? DiaryTableCell
+            cell.delegate = self
+            cell.setAddTarget()
             break
         case .Good:
             cell = tableView.dequeueReusableCell(withIdentifier: "Good") as? DiaryTableCell
@@ -90,9 +92,16 @@ extension DiaryVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
-    
 }
 
+extension DiaryVC: DiaryDelegate {
+    func loadTextInputVC() {
+        print("loadTextInputVC")
+        let storyboard = UIStoryboard.init(name: "Common", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TextInputVC")
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false, completion: nil)
+    }
+}
 
 

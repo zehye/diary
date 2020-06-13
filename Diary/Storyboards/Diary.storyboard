@@ -53,6 +53,9 @@
                                                 <constraint firstItem="JTx-Fi-NNc" firstAttribute="centerY" secondItem="Yji-NB-D4x" secondAttribute="centerY" id="vFK-qS-mhg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textLbl" destination="JTx-Fi-NNc" id="aue-7l-tp5"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Weather" id="AwM-Uc-PU5" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="71.666667938232422" width="375" height="44.333332061767578"/>
@@ -289,24 +292,36 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="224.33332824707031"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x2T-fI-Ytj">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEJ-fc-xaN">
                                                     <rect key="frame" x="20" y="12" width="335" height="200.33333333333334"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dc2-UU-kN4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="14.333333333333334"/>
+                                                            <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="14"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Ee5-KN-gWi"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dc2-UU-kN4" secondAttribute="trailing" id="HhH-tp-9B0"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dc2-UU-kN4" secondAttribute="bottom" id="fla-FA-hmB"/>
+                                                        <constraint firstItem="dc2-UU-kN4" firstAttribute="top" secondItem="EEJ-fc-xaN" secondAttribute="top" id="oXc-NG-kpF"/>
+                                                        <constraint firstItem="dc2-UU-kN4" firstAttribute="leading" secondItem="EEJ-fc-xaN" secondAttribute="leading" id="wqa-y8-dvL"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="xe2-O5-ZGs"/>
                                                     </constraints>
-                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="x2T-fI-Ytj" firstAttribute="leading" secondItem="Uy3-50-gu3" secondAttribute="leading" constant="20" id="IqY-C5-qAH"/>
-                                                <constraint firstAttribute="bottom" secondItem="x2T-fI-Ytj" secondAttribute="bottom" constant="12" id="Pno-bb-uq5"/>
-                                                <constraint firstItem="x2T-fI-Ytj" firstAttribute="top" secondItem="Uy3-50-gu3" secondAttribute="top" constant="12" id="h6y-Gd-S9a"/>
-                                                <constraint firstAttribute="trailing" secondItem="x2T-fI-Ytj" secondAttribute="trailing" constant="20" id="iN3-yF-hDc"/>
+                                                <constraint firstItem="EEJ-fc-xaN" firstAttribute="top" secondItem="Uy3-50-gu3" secondAttribute="top" constant="12" id="ERO-OK-z1v"/>
+                                                <constraint firstAttribute="bottom" secondItem="EEJ-fc-xaN" secondAttribute="bottom" constant="12" id="KUM-vt-Pw4"/>
+                                                <constraint firstItem="EEJ-fc-xaN" firstAttribute="leading" secondItem="Uy3-50-gu3" secondAttribute="leading" constant="20" id="cK5-cX-pPP"/>
+                                                <constraint firstAttribute="trailing" secondItem="EEJ-fc-xaN" secondAttribute="trailing" constant="20" id="eYG-q7-7Ij"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textLbl" destination="dc2-UU-kN4" id="j76-ud-yhU"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Good" id="hrS-zG-BsD" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="471.33333206176758" width="375" height="70.666664123535156"/>

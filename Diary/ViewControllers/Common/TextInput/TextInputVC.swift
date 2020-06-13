@@ -10,6 +10,9 @@ import UIKit
 
 class TextInputVC: UIViewController {
     
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var frontView: UIView!
+    
     @IBOutlet weak var textView: UITextView!
     
     @IBOutlet weak var bottomHeight: NSLayoutConstraint!
@@ -23,6 +26,10 @@ class TextInputVC: UIViewController {
         
         
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.setBackgroundAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,9 +50,28 @@ class TextInputVC: UIViewController {
         
     }
     
+    override func viewDidLayoutSubviews() {
+      super.viewDidLayoutSubviews()
+
+        self.textView.contentOffset = .zero
+    }
+    
     func setUI() {
         if let txt = text {
             self.textView.text = txt
+            
+        }
+    }
+    
+    func setBackgroundAnimation() {
+        self.view.bringSubviewToFront(self.frontView)
+        UIView.animate(withDuration: 0.3) {
+            self.backgroundView.alpha = 0.85
+        }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.backgroundView.alpha = 0.85
+        }) { (success) in
+            self.textView.becomeFirstResponder()
         }
     }
     
@@ -67,6 +93,13 @@ class TextInputVC: UIViewController {
         UIView.animate(withDuration: keyboardShowAnimateDuartion.doubleValue) {
             self.bottomHeight.constant = heightConstant
         }
+    }
+    
+    @IBAction func backBtnClicked(_ sender:UIButton) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    @IBAction func saveBtnClicked(_ sender:UIButton) {
+        self.dismiss(animated: false, completion: nil)
     }
     
 }
