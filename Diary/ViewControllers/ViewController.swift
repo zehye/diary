@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     @IBAction func addBtn(_ sender: UIButton) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc: PlanViewController = storyboard.instantiateViewController(withIdentifier: "PlanViewController") as! PlanViewController
+        let vc: PlanVC = storyboard.instantiateViewController(withIdentifier: "PlanViewController") as! PlanVC
         self.present(vc, animated: true, completion: nil)
     }
     

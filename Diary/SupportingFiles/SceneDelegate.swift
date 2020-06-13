@@ -18,14 +18,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow.init(windowScene: windowScene)
-            
+            /*
             let storyboard = UIStoryboard.init(name: "Diary", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "DiaryVC")
+            */
             
-            /*
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = storyboard.instantiateInitialViewController()
-             */
+             
             window.rootViewController = vc
             self.window = window
             window.makeKeyAndVisible()
