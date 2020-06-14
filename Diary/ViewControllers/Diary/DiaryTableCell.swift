@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol DiaryDelegate {
-    func loadTextInputVC()
+    func loadTextInputVC(text:String, cell:DiaryTableCell)
 }
 
 class DiaryTableCell: UITableViewCell {
@@ -38,7 +38,11 @@ class DiaryTableCell: UITableViewCell {
     }
     @objc func loadTextInput(_ sender:UITapGestureRecognizer) {
         print("loadTextInput")
-        self.delegate.loadTextInputVC()
+        if let text = self.textLbl.text {
+            self.delegate.loadTextInputVC(text: text, cell: self)
+        }else {
+            self.delegate.loadTextInputVC(text: "", cell: self)
+        }
     }
 
 }

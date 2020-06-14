@@ -74,10 +74,11 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="44.333333333333336"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvs-zL-oDq">
-                                                                            <rect key="frame" x="19.666666666666661" y="0.0" width="44.333333333333343" height="44.333333333333336"/>
+                                                                            <rect key="frame" x="22" y="2.3333333333333321" width="40" height="40"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" secondItem="cvs-zL-oDq" secondAttribute="height" multiplier="1:1" id="vt1-CO-Rha"/>
+                                                                                <constraint firstAttribute="height" constant="40" id="Jvr-Zg-aS1"/>
+                                                                                <constraint firstAttribute="width" constant="40" id="uu9-zU-s4u"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
                                                                             <state key="normal" title="눈">
@@ -92,20 +93,19 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <constraints>
-                                                                        <constraint firstItem="cvs-zL-oDq" firstAttribute="top" secondItem="kE5-o7-0cQ" secondAttribute="top" id="7M5-dP-3Hl"/>
                                                                         <constraint firstItem="cvs-zL-oDq" firstAttribute="centerX" secondItem="kE5-o7-0cQ" secondAttribute="centerX" id="LjC-aF-UxG"/>
                                                                         <constraint firstItem="cvs-zL-oDq" firstAttribute="centerY" secondItem="kE5-o7-0cQ" secondAttribute="centerY" id="Xsi-SF-Ddd"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="cvs-zL-oDq" secondAttribute="bottom" id="dYs-tn-C3N"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdY-Wu-hE2">
                                                                     <rect key="frame" x="83.666666666666671" y="0.0" width="84.000000000000014" height="44.333333333333336"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5x-eA-MCV">
-                                                                            <rect key="frame" x="19.666666666666661" y="0.0" width="44.333333333333343" height="44.333333333333336"/>
+                                                                            <rect key="frame" x="22" y="2.3333333333333321" width="40" height="40"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" secondItem="r5x-eA-MCV" secondAttribute="height" multiplier="1:1" id="SyS-Wq-wVC"/>
+                                                                                <constraint firstAttribute="height" constant="40" id="4VS-DL-UvJ"/>
+                                                                                <constraint firstAttribute="width" constant="40" id="bXG-aR-wzt"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
                                                                             <state key="normal" title="비">
@@ -121,8 +121,6 @@
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <constraints>
                                                                         <constraint firstItem="r5x-eA-MCV" firstAttribute="centerY" secondItem="KdY-Wu-hE2" secondAttribute="centerY" id="BDj-4x-00L"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="r5x-eA-MCV" secondAttribute="bottom" id="CP2-qi-6L4"/>
-                                                                        <constraint firstItem="r5x-eA-MCV" firstAttribute="top" secondItem="KdY-Wu-hE2" secondAttribute="top" id="GhJ-U4-34T"/>
                                                                         <constraint firstItem="r5x-eA-MCV" firstAttribute="centerX" secondItem="KdY-Wu-hE2" secondAttribute="centerX" id="RV2-OA-9qV"/>
                                                                     </constraints>
                                                                 </view>
@@ -130,10 +128,11 @@
                                                                     <rect key="frame" x="167.66666666666666" y="0.0" width="83.666666666666657" height="44.333333333333336"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0C-Ya-dSd">
-                                                                            <rect key="frame" x="19.666666666666689" y="0.0" width="44.333333333333343" height="44.333333333333336"/>
+                                                                            <rect key="frame" x="21.666666666666686" y="2.3333333333333321" width="40" height="40"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" secondItem="u0C-Ya-dSd" secondAttribute="height" multiplier="1:1" id="4zA-bn-W5w"/>
+                                                                                <constraint firstAttribute="height" constant="40" id="92W-XT-B0Z"/>
+                                                                                <constraint firstAttribute="width" constant="40" id="gQu-eG-7pR"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
                                                                             <state key="normal" title="흐림">
@@ -150,18 +149,17 @@
                                                                     <constraints>
                                                                         <constraint firstItem="u0C-Ya-dSd" firstAttribute="centerY" secondItem="VRB-V5-ora" secondAttribute="centerY" id="IBF-cS-rbn"/>
                                                                         <constraint firstItem="u0C-Ya-dSd" firstAttribute="centerX" secondItem="VRB-V5-ora" secondAttribute="centerX" id="Muo-fE-r5b"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="u0C-Ya-dSd" secondAttribute="bottom" id="PDV-V5-txe"/>
-                                                                        <constraint firstItem="u0C-Ya-dSd" firstAttribute="top" secondItem="VRB-V5-ora" secondAttribute="top" id="sur-oR-kKH"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyf-TE-LNo">
                                                                     <rect key="frame" x="251.33333333333329" y="0.0" width="83.666666666666657" height="44.333333333333336"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcd-ad-P3T">
-                                                                            <rect key="frame" x="19.666666666666689" y="0.0" width="44.333333333333343" height="44.333333333333336"/>
+                                                                            <rect key="frame" x="21.666666666666686" y="2.3333333333333321" width="40" height="40"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" secondItem="gcd-ad-P3T" secondAttribute="height" multiplier="1:1" id="wfZ-zy-vNL"/>
+                                                                                <constraint firstAttribute="width" constant="40" id="GuI-Wa-MHg"/>
+                                                                                <constraint firstAttribute="height" constant="40" id="jj7-30-Xiu"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="15"/>
                                                                             <state key="normal" title="맑음">
@@ -177,9 +175,7 @@
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <constraints>
                                                                         <constraint firstItem="gcd-ad-P3T" firstAttribute="centerY" secondItem="Eyf-TE-LNo" secondAttribute="centerY" id="QM7-H2-AfL"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="gcd-ad-P3T" secondAttribute="bottom" id="cn1-ne-T8y"/>
                                                                         <constraint firstItem="gcd-ad-P3T" firstAttribute="centerX" secondItem="Eyf-TE-LNo" secondAttribute="centerX" id="naX-N4-Nc9"/>
-                                                                        <constraint firstItem="gcd-ad-P3T" firstAttribute="top" secondItem="Eyf-TE-LNo" secondAttribute="top" id="sJS-l6-LbS"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -295,7 +291,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEJ-fc-xaN">
                                                     <rect key="frame" x="20" y="12" width="335" height="200.33333333333334"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dc2-UU-kN4">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dc2-UU-kN4">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="14.333333333333334"/>
                                                             <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="14"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -92,14 +92,36 @@ extension DiaryVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var heightForRow = UITableView.automaticDimension
+        let tableSection = TableSection(rawValue: indexPath.section)
+        if tableSection == TableSection.Weather {
+            heightForRow = 44
+        }
+        return heightForRow
+    }
+    
+    func reloadCell(cell:DiaryTableCell) {
+        guard let index = self.tableView.indexPath(for: cell) else {
+            return
+        }
+        self.tableView.reloadRows(at: [index], with: .automatic)
+    }
 }
 
 extension DiaryVC: DiaryDelegate {
-    func loadTextInputVC() {
+    func loadTextInputVC(text:String, cell:DiaryTableCell) {
         print("loadTextInputVC")
         let storyboard = UIStoryboard.init(name: "Common", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "TextInputVC")
+        let vc:TextInputVC = storyboard.instantiateViewController(withIdentifier: "TextInputVC") as! TextInputVC
         vc.modalPresentationStyle = .overFullScreen
+        vc.text = text
+        vc.addSaveHandler { text in
+            DispatchQueue.main.async {
+                cell.textLbl.text = text
+                self.reloadCell(cell: cell)
+            }
+        }
         self.present(vc, animated: false, completion: nil)
     }
 }

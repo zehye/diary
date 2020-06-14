@@ -20,6 +20,7 @@ class TextInputVC: UIViewController {
     
     @IBOutlet weak var textViewBottom: NSLayoutConstraint!
     // 저장 핸들러
+    private var saveHandler: ((_ text: String) -> Void)?
     
     //
     var text:String!
@@ -68,14 +69,10 @@ class TextInputVC: UIViewController {
             self.textView.becomeFirstResponder()
         }
     }
-    /*
-    func setTextView(heightConstant:CGFloat, duration:NSNumber) {
-        print("navigationView : \(self.navigationView.frame)")
-        print("textView : \(self.textView.frame)")
-        print("textView : \(textView.maxHeight)")
-        textView.maxHeight = 70
+    
+    func addSaveHandler(handler SaveHandler: @escaping (_ text: String) -> Void) {
+        saveHandler = SaveHandler
     }
-     */
     
     @objc func keyboardWillHide(_ notification: Notification){
         handleKeyboardIssue(notification: notification, isAppearing: false)
@@ -101,6 +98,14 @@ class TextInputVC: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     @IBAction func saveBtnClicked(_ sender:UIButton) {
+        
+        if let saveAction = saveHandler {
+            if let text = self.textView.text {
+                saveAction(text)
+            }else {
+                saveAction("")
+            }
+        }
         self.dismiss(animated: false, completion: nil)
     }
     
