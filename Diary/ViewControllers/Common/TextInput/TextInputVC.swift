@@ -18,6 +18,7 @@ class TextInputVC: UIViewController {
     
     @IBOutlet weak var textView: GrowingTextView!
     
+    @IBOutlet weak var textViewBottom: NSLayoutConstraint!
     // 저장 핸들러
     
     //
@@ -38,8 +39,8 @@ class TextInputVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        // NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         
     }
@@ -60,13 +61,11 @@ class TextInputVC: UIViewController {
     
     func setBackgroundAnimation() {
         self.view.bringSubviewToFront(self.frontView)
-        UIView.animate(withDuration: 0.3) {
-            self.backgroundView.alpha = 0.85
-        }
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.backgroundView.alpha = 0.85
         }) { (success) in
-            // self.textView.becomeFirstResponder()
+            self.textView.becomeFirstResponder()
         }
     }
     /*
@@ -76,6 +75,7 @@ class TextInputVC: UIViewController {
         print("textView : \(textView.maxHeight)")
         textView.maxHeight = 70
     }
+     */
     
     @objc func keyboardWillHide(_ notification: Notification){
         handleKeyboardIssue(notification: notification, isAppearing: false)
@@ -91,10 +91,12 @@ class TextInputVC: UIViewController {
         guard let keyboardShowAnimateDuartion = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber else {return}
         let keyboardHeight = keyboardFrame.cgRectValue.height
         
-        let heightConstant = isAppearing ? keyboardHeight : 0
-        self.setTextView(heightConstant: heightConstant, duration: keyboardShowAnimateDuartion)
+        let heightConstant = isAppearing ? keyboardHeight + 10 : 10
+        UIView.animate(withDuration: TimeInterval(truncating: keyboardShowAnimateDuartion)) {
+            self.textViewBottom.constant = heightConstant
+        }
     }
-    */
+    
     @IBAction func backBtnClicked(_ sender:UIButton) {
         self.dismiss(animated: false, completion: nil)
     }
