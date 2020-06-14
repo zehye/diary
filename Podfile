@@ -8,5 +8,6 @@ target 'Diary' do
     pod "CalendarLib"
     
     pod 'GrowingTextView', '0.7.2'
-    
+    # 키보드 매니저
+    pod 'IQKeyboardManagerSwift'
 end

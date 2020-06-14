@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import GrowingTextView
 
 class TextInputVC: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var frontView: UIView!
     
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var navigationView: UIView!
     
-    @IBOutlet weak var bottomHeight: NSLayoutConstraint!
+    @IBOutlet weak var textView: GrowingTextView!
+    
     // 저장 핸들러
     
     //
@@ -23,24 +25,23 @@ class TextInputVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUI()
         
         
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.setBackgroundAnimation()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        // NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector:
-            #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification,
-                                             object: nil)
-        NotificationCenter.default.addObserver(self, selector:
-            #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification,
-                                             object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,16 +51,10 @@ class TextInputVC: UIViewController {
         
     }
     
-    override func viewDidLayoutSubviews() {
-      super.viewDidLayoutSubviews()
-
-        self.textView.contentOffset = .zero
-    }
-    
     func setUI() {
+        // self.textView.delegate = self
         if let txt = text {
             self.textView.text = txt
-            
         }
     }
     
@@ -71,8 +66,15 @@ class TextInputVC: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             self.backgroundView.alpha = 0.85
         }) { (success) in
-            self.textView.becomeFirstResponder()
+            // self.textView.becomeFirstResponder()
         }
+    }
+    /*
+    func setTextView(heightConstant:CGFloat, duration:NSNumber) {
+        print("navigationView : \(self.navigationView.frame)")
+        print("textView : \(self.textView.frame)")
+        print("textView : \(textView.maxHeight)")
+        textView.maxHeight = 70
     }
     
     @objc func keyboardWillHide(_ notification: Notification){
@@ -90,11 +92,9 @@ class TextInputVC: UIViewController {
         let keyboardHeight = keyboardFrame.cgRectValue.height
         
         let heightConstant = isAppearing ? keyboardHeight : 0
-        UIView.animate(withDuration: keyboardShowAnimateDuartion.doubleValue) {
-            self.bottomHeight.constant = heightConstant
-        }
+        self.setTextView(heightConstant: heightConstant, duration: keyboardShowAnimateDuartion)
     }
-    
+    */
     @IBAction func backBtnClicked(_ sender:UIButton) {
         self.dismiss(animated: false, completion: nil)
     }
@@ -103,13 +103,13 @@ class TextInputVC: UIViewController {
     }
     
 }
-extension TextInputVC: UITextViewDelegate {
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        return true
-    }
-    func textViewDidChange(_ textView: UITextView) {
-        print("textViewDidChange")
+/*
+extension TextInputVC: GrowingTextViewDelegate {
+    func textViewDidChangeHeight(_ textView: GrowingTextView, height: CGFloat) {
+       UIView.animate(withDuration: 0.2) {
+           self.view.layoutIfNeeded()
+       }
     }
 }
-
+*/
 

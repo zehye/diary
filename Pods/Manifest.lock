@@ -4,6 +4,7 @@ PODS:
     - OSCache (~> 1.2)
   - FSCalendar (2.8.1)
   - GrowingTextView (0.7.2)
+  - IQKeyboardManagerSwift (6.5.5)
   - OrderedDictionary (1.4)
   - OSCache (1.2.1)
 
@@ -11,12 +12,14 @@ DEPENDENCIES:
   - CalendarLib
   - FSCalendar
   - GrowingTextView (= 0.7.2)
+  - IQKeyboardManagerSwift
 
 SPEC REPOS:
   trunk:
     - CalendarLib
     - FSCalendar
     - GrowingTextView
+    - IQKeyboardManagerSwift
     - OrderedDictionary
     - OSCache
 
@@ -24,9 +27,10 @@ SPEC CHECKSUMS:
   CalendarLib: 040a8a655376581d8dc7c3c63196ddcf5223f471
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   GrowingTextView: 876bf42005b5e4a4fd740597db12caaf41f0fe6c
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   OrderedDictionary: 138c8d2e358d3a0c9adda15c6c7db24e8e3b09e6
   OSCache: 826996b68e8542a8a3d8af1ab0a0fc3070d8f357
 
-PODFILE CHECKSUM: ec6db45d48a8a3964287f70ebd05fa0a83e7f515
+PODFILE CHECKSUM: 14dd3a14cca1673d5a865b42a3c15c64845bd43d
 
 COCOAPODS: 1.9.1
