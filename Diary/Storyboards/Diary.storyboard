@@ -352,6 +352,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="ppT-ff-dS6" secondAttribute="trailing" constant="20" id="vTj-OC-0gt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textLbl" destination="ppT-ff-dS6" id="V8p-Dz-dLq"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Bad" id="UKh-eX-j56" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="541.99999618530273" width="375" height="70.666664123535156"/>
@@ -386,6 +389,9 @@
                                                 <constraint firstItem="CC2-v8-Gmw" firstAttribute="top" secondItem="vMD-RY-Byi" secondAttribute="top" constant="12" id="oTE-4G-2Ek"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textLbl" destination="deB-xh-1Fs" id="jHB-iL-FNP"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Happy" id="kCl-mf-wX7" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="612.66666030883789" width="375" height="70.666664123535156"/>
@@ -420,6 +426,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="JeR-N6-9Z2" secondAttribute="bottom" constant="12" id="wnY-fw-6cU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textLbl" destination="JeR-N6-9Z2" id="OGb-cx-fNy"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Kill" id="JJv-G1-WXZ" customClass="DiaryTableCell" customModule="Diary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="683.33332443237305" width="375" height="69.333335876464844"/>
@@ -454,6 +463,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="ObH-eH-ODw" secondAttribute="trailing" constant="20" id="xcG-ks-YaF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textLbl" destination="vIY-6y-EUI" id="X5D-81-hGh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

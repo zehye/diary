@@ -12,17 +12,20 @@ class DiaryVC: BaseVC {
     
     @IBOutlet var tableView:UITableView!
     
+    // 현재 다이어리 모델
+    var diary = ModelDiary()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
         self.setUI()
     }
     
     override func setUI() {
-        print("setUI")
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
     }
+    
     
     
 }
@@ -69,20 +72,24 @@ extension DiaryVC: UITableViewDelegate, UITableViewDataSource {
             break
         case .Content:
             cell = tableView.dequeueReusableCell(withIdentifier: "Content") as? DiaryTableCell
-            cell.delegate = self
-            cell.setAddTarget()
+            cell.setDelegate(self)
+            cell.setText(text: self.diary.content, type: .Content)
             break
         case .Good:
             cell = tableView.dequeueReusableCell(withIdentifier: "Good") as? DiaryTableCell
+            cell.setDelegate(self)
             break
         case .Bad:
             cell = tableView.dequeueReusableCell(withIdentifier: "Bad") as? DiaryTableCell
+            cell.setDelegate(self)
             break
         case .Happy:
             cell = tableView.dequeueReusableCell(withIdentifier: "Happy") as? DiaryTableCell
+            cell.setDelegate(self)
             break
         case .Kill:
             cell = tableView.dequeueReusableCell(withIdentifier: "Kill") as? DiaryTableCell
+            cell.setDelegate(self)
             break
         default:
             cell = DiaryTableCell.init()
@@ -109,7 +116,7 @@ extension DiaryVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension DiaryVC: DiaryDelegate {
+extension DiaryVC: DiaryTextDelegate {
     func loadTextInputVC(text:String, cell:DiaryTableCell) {
         print("loadTextInputVC")
         let storyboard = UIStoryboard.init(name: "Common", bundle: nil)

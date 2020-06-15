@@ -57,6 +57,7 @@ class TextInputVC: UIViewController {
         // self.textView.delegate = self
         if let txt = text {
             self.textView.text = txt
+            self.textView.placeholder = DiaryContentPlaceHolder
         }
     }
     
@@ -85,11 +86,10 @@ class TextInputVC: UIViewController {
     fileprivate func handleKeyboardIssue(notification: Notification, isAppearing: Bool) {
         guard let userInfo = notification.userInfo as? [String:Any] else {return}
         guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
-        guard let keyboardShowAnimateDuartion = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber else {return}
+        // guard let keyboardShowAnimateDuartion = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber else {return}
         let keyboardHeight = keyboardFrame.cgRectValue.height
-        
         let heightConstant = isAppearing ? keyboardHeight + 10 : 10
-        UIView.animate(withDuration: TimeInterval(truncating: keyboardShowAnimateDuartion)) {
+        UIView.animate(withDuration: 0.5) {
             self.textViewBottom.constant = heightConstant
         }
     }
@@ -110,13 +110,7 @@ class TextInputVC: UIViewController {
     }
     
 }
-/*
-extension TextInputVC: GrowingTextViewDelegate {
-    func textViewDidChangeHeight(_ textView: GrowingTextView, height: CGFloat) {
-       UIView.animate(withDuration: 0.2) {
-           self.view.layoutIfNeeded()
-       }
-    }
-}
-*/
+
+
+
 

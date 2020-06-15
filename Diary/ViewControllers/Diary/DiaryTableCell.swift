@@ -9,26 +9,53 @@
 import UIKit
 
 
-protocol DiaryDelegate {
+protocol DiaryTextDelegate {
     func loadTextInputVC(text:String, cell:DiaryTableCell)
+}
+
+enum DiaryTableType {
+    case Date
+    case Weather
+    case Getup
+    case BedTime
+    case Image
+    case Content
+    case Good
+    case Bad
+    case Happy
+    case Kill
 }
 
 class DiaryTableCell: UITableViewCell {
 
     @IBOutlet weak var textLbl: UILabel!
     
-    var delegate:DiaryDelegate!
+    var delegate:DiaryTextDelegate!
+    var type:DiaryTableType!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func setDelegate(_ delegate:DiaryTextDelegate) {
+        self.delegate = delegate
+        setAddTarget()
+    }
+    
+    func setText(text:String, type:DiaryTableType) {
+        
+        switch type {
+        case .Content:
+            if text == "" {
+                self.textLbl.text = DiaryContentPlaceHolder
+                return
+            }
+            break
+        default:
+            break
+            
+        }
+        self.textLbl.text = text
     }
     
     func setAddTarget() {
@@ -36,9 +63,13 @@ class DiaryTableCell: UITableViewCell {
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(loadTextInput(_:)))
         self.addGestureRecognizer(tapGesture)
     }
+    
     @objc func loadTextInput(_ sender:UITapGestureRecognizer) {
         print("loadTextInput")
         if let text = self.textLbl.text {
+            if text == DiaryContentPlaceHolder {
+                self.delegate.loadTextInputVC(text: "", cell: self)
+            }
             self.delegate.loadTextInputVC(text: text, cell: self)
         }else {
             self.delegate.loadTextInputVC(text: "", cell: self)

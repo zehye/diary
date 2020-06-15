@@ -43,6 +43,10 @@ class ModelDiary: BaseModel {
     // 제일 죽이고 싶은 놈
     var kill = String()
     
+    override init() {
+        super.init()
+    }
+    
     override init(_ dictionary: Dictionary<String, Any>) {
         super.init(dictionary)
     }

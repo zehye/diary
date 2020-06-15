@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,7 @@
 		9B242E2424939FF0004F3011 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B242E2024939FF0004F3011 /* GmarketSansMedium.otf */; };
 		9B242E282493A774004F3011 /* TextInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B242E272493A774004F3011 /* TextInputVC.swift */; };
 		9B242E2A2493A77B004F3011 /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B242E292493A77B004F3011 /* Common.storyboard */; };
+		9B242E2C249655ED004F3011 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B242E2B249655ED004F3011 /* Defines.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		9B242E2024939FF0004F3011 /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
 		9B242E272493A774004F3011 /* TextInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputVC.swift; sourceTree = "<group>"; };
 		9B242E292493A77B004F3011 /* Common.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
+		9B242E2B249655ED004F3011 /* Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
 		DC25CD09E6EC0498E9655D86 /* Pods-Diary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diary/Pods-Diary.debug.xcconfig"; sourceTree = "<group>"; };
 		E9D6061250C64BA5DEF1C5A8 /* Pods_Diary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 				044412EB2488BBD500DAE1B5 /* SceneDelegate.swift */,
 				044412F52488BBD600DAE1B5 /* Assets.xcassets */,
 				044412FA2488BBD600DAE1B5 /* Info.plist */,
+				9B242E2B249655ED004F3011 /* Defines.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				044BD95424933989006BF5A7 /* CalendarVC.swift in Sources */,
 				04441308248E002D00DAE1B5 /* PlanVC.swift in Sources */,
 				044412EA2488BBD500DAE1B5 /* AppDelegate.swift in Sources */,
+				9B242E2C249655ED004F3011 /* Defines.swift in Sources */,
 				044359702490B69800F45699 /* SearchBarViewController.swift in Sources */,
 				9B242E1424925583004F3011 /* BaseVC.swift in Sources */,
 				044412EC2488BBD500DAE1B5 /* SceneDelegate.swift in Sources */,
